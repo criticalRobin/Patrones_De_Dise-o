@@ -19,4 +19,20 @@ public class NumsConvertorTest {
 
         Assert.assertEquals("V", roman);
     }
+
+    @Test
+    public void bigNumberToTomanTest() {
+        Assert.assertThrows(IllegalArgumentException.class, () -> {
+            NumsConvertor num = new NumsConvertor(40000000);
+            num.convertToRomanNumber();
+        });
+    }
+
+    @Test
+    public void numberZeroToRomanTest() {
+        Assert.assertThrows(IllegalArgumentException.class, () -> {
+            NumsConvertor num = new NumsConvertor(0);
+            num.convertToRomanNumber();
+        });
+    }
 }
