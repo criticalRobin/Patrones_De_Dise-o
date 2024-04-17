@@ -18,12 +18,10 @@ public class NumsConvertor {
     }
 
     public String convertToRomanNumber() {
-        // Verificar si el número está dentro del rango válido (1 a 3999)
         if (number < 1 || number > 3999) {
             throw new IllegalArgumentException("El número debe estar entre 1 y 3999");
         }
 
-        // Definir el mapa de equivalencias de números romanos
         TreeMap<Integer, String> mapa = new TreeMap<>();
         mapa.put(1000, "M");
         mapa.put(900, "CM");
@@ -39,18 +37,16 @@ public class NumsConvertor {
         mapa.put(4, "IV");
         mapa.put(1, "I");
 
-        // Crear un StringBuilder para construir la representación en números romanos
         StringBuilder romano = new StringBuilder();
 
-        // Iterar sobre el mapa para convertir el número
         int num = number;
         while (num > 0) {
-            int llave = mapa.floorKey(num); // Encontrar el número más grande en el mapa que sea menor o igual a 'num'
-            String valor = mapa.get(llave); // Obtener el valor romano asociado a esa llave
-            romano.append(valor); // Agregar el valor romano al resultado
-            num -= llave; // Restar el valor actual al número
+            int llave = mapa.floorKey(num); 
+            String valor = mapa.get(llave);
+            romano.append(valor);
+            num -= llave;
         }
 
-        return romano.toString(); // Devolver la representación en números romanos
+        return romano.toString();
     }
 }
