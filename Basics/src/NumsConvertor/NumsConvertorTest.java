@@ -8,6 +8,7 @@ public class NumsConvertorTest {
     public void numberOneToRomanTest() {
         NumsConvertor num = new NumsConvertor(1);
         String roman = num.convertToRomanNumber();
+        System.out.println(roman);
 
         Assert.assertEquals("I", roman);
     }
@@ -16,7 +17,7 @@ public class NumsConvertorTest {
     public void numberFiveToRomanTest() {
         NumsConvertor num = new NumsConvertor(5);
         String roman = num.convertToRomanNumber();
-
+        System.out.println(roman);
         Assert.assertEquals("V", roman);
     }
 
